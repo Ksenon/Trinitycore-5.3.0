@@ -1,6 +1,6 @@
 # 
- Copyright (C) 2013 Arcania France <http://www.arcaniafr.zz.mu/>
- Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
+#Copyright (C) 2013 Arcania France <http://www.arcaniafr.zz.mu/>
+#Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without
