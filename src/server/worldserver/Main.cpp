@@ -32,7 +32,7 @@
 #include "Master.h"
 
 #ifndef _TRINITY_CORE_CONFIG
-# define _TRINITY_CORE_CONFIG  "C:/Users/Arcania/Desktop/TrinityCore-master/Conf/worldserver.conf"
+# define _TRINITY_CORE_CONFIG  "worldserver.conf"
 #endif //_TRINITY_CORE_CONFIG
 
 #ifdef _WIN32
