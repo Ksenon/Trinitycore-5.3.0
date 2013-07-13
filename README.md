@@ -1,6 +1,7 @@
-MOP520
-======
+TrinityCore By Arcania France V.5.3.0 compatible
+================================================
+/* NOT PLAYABLE*/
 
-Emu world of warcraft Mist Of pandaria 5.2.0
+this is a World of Warcraft Mist Of pandaria 5.3.0 emulator
 
-Base trinity core
+Based on trinity core
