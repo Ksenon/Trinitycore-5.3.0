@@ -41,7 +41,7 @@
 #include "RealmAcceptor.h"
 
 #ifndef _TRINITY_REALM_CONFIG
-# define _TRINITY_REALM_CONFIG  "C:/Users/Arcania/Desktop/TrinityCore-master/Conf/authserver.conf"
+# define _TRINITY_REALM_CONFIG  "authserver.conf"
 #endif
 
 bool StartDB();
