@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2013 Arcania France <http://www.arcaniafr.zz.mu/>
  * Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>
  * Copyright (C) 2005-2010 MaNGOS <http://getmangos.com/>
  *
