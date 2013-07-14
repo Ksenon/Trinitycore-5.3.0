@@ -54,6 +54,7 @@ struct AchievementEntry
     //char* reward;                                         // 11
     uint32 count;                                           // 12 - need this count of completed criterias (own or referenced achievement criterias)
     uint32 refAchievement;                                  // 13 - referenced achievement (counting of all completed criterias)
+    //uint32 Unk;                                           // 14
 };
 
 struct AchievementCategoryEntry
@@ -539,12 +540,12 @@ struct AreaTableEntry
     uint32  zone;                                           // 2 if 0 then it's zone, else it's zone id of this area
     uint32  exploreFlag;                                    // 3, main index
     uint32  flags;                                          // 4,
-    //DBCString AreaName;                                   // 5        5.0.4, internal?
+    //DBCString AreaName;                                   // 5        5.0.5, internal?
                                                             // 6        m_SoundProviderPref
                                                             // 7        m_SoundProviderPrefUnderwater
                                                             // 8        m_AmbienceID
                                                             // 9        m_ZoneMusic
-    //DBCString AreaName;                                   // 10       5.0.4, internal?
+    //DBCString AreaName;                                   // 10       5.0.5, internal?
                                                             // 11       m_IntroSound
     int32   area_level;                                     // 12
     char*   area_name;                                      // 13
@@ -558,6 +559,7 @@ struct AreaTableEntry
     //uint32 unk22;                                         // 24 4.0.0
     //uint32 unk23;                                         // 25 4.0.0
     //uint32 unk24;                                         // 26 4.0.1, may be worldStateId
+	//uint32 unk25;                                         // 27 5.0.5
 
     // helpers
     bool IsSanctuary() const
@@ -579,18 +581,19 @@ struct AreaGroupEntry
 
 struct AreaPOIEntry
 {
-    uint32 id;              //0
-    uint32 icon[11];        //1-11
-    float x;                //12
-    float y;                //13
-    uint32 mapId;           //14
-    //uint32 val1;          //15
-    uint32 zoneId;          //16
-    //char* name;           //17 - name
-    //char* name2;          //18 - name2
-    uint32 worldState;      //19
-    //uint32 val2;          //20
-    //uint32 unk;           //21
+    uint32 id;              // 0
+    uint32 icon[11];        // 1-11
+    float x;                // 12
+    float y;                // 13
+    uint32 mapId;           // 14
+    //uint32 val1;          // 15
+    uint32 zoneId;          // 16
+    //char* name;           // 17 - name
+    //char* name2;          // 18 - name2
+    uint32 worldState;      // 19
+    //uint32 val2;          // 20
+    //uint32 unk0;          // 21
+	//uint32 unk1;          // 22
 };
 
 struct AreaTriggerEntry
@@ -608,8 +611,8 @@ struct AreaTriggerEntry
     float   box_y;                                          // 10       m_box_width
     float   box_z;                                          // 11       m_box_heigh
     float   box_orientation;                                // 12       m_box_yaw
-    //uint32 unk;                                           // 13       5.0.4
-    //uint32 unk;                                           // 14       5.0.4
+    //uint32 unk;                                           // 13       5.0.5
+    //uint32 unk;                                           // 14       5.0.5
     uint32 AreaId;                                          // 15       m_areaId?
 };
 
@@ -686,7 +689,7 @@ struct CharTitlesEntry
     char* name;                                             // 2        m_name_lang
     //char*       name2;                                    // 3        m_name1_lang
     uint32  bit_index;                                      // 4        m_mask_ID used in PLAYER_CHOSEN_TITLE and 1<<index in PLAYER__FIELD_KNOWN_TITLES
-    //uint32                                                // 5
+    //uint32                                                // 5 // 5.0.5
 };
 
 struct ChatChannelsEntry
@@ -742,7 +745,7 @@ struct ChrRacesEntry
     //uint32                                                // 21 (23 for worgens)
     //uint32                                                // 22 4.0.0
     //uint32                                                // 23 4.0.0
-    //uint32                                                // 24-35    504, Unk
+    //uint32                                                // 24-35    5.0.5, Unk
 };
 
 struct ChrPowerTypesEntry
@@ -761,7 +764,7 @@ struct CinematicCameraEntry
     float       start_x;                                    // 3
     float       start_y;                                    // 4
     float       start_z;                                    // 5
-    float       unk6;                                       // 6 speed?
+    float       start_o;                                    // 6
 };
 */
 
@@ -1026,14 +1029,14 @@ struct GameObjectDisplayInfoEntry
 {
     uint32      Displayid;                                  // 0        m_ID
     char* filename;                                         // 1
-    //uint32  unk1[10];                                     //2-11
+    //uint32  unk1[10];                                     // 2-11
     float   minX;
     float   minY;
     float   minZ;
     float   maxX;
     float   maxY;
     float   maxZ;
-    //uint32  transport;                                    //18
+    //uint32  transport;                                    // 18
     //uint32 unk;                                           // 19
     //uint32 unk1;                                          // 20
 };
