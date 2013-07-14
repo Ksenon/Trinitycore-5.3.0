@@ -29,7 +29,7 @@
 #else
     #include <io.h>
 #endif
- 
+
 #ifdef O_LARGEFILE
     #define OPEN_FLAGS (O_RDONLY | O_BINARY | O_LARGEFILE)
 #else
@@ -1123,12 +1123,12 @@ bool LoadLocaleMPQFile(int locale)
         if (Builds[i] > LAST_DBC_IN_DATA_BUILD)
         {
             prefix = "";
-            _stprintf(buff, _T("/Data/%s/wow-update-%s-%u.MPQ"), input_path, LocalesT[locale], LocalesT[locale], Builds[i]);
+            _stprintf(buff, _T("%s/Data/%s/wow-update-%s-%u.MPQ"), input_path, LocalesT[locale], LocalesT[locale], Builds[i]);
         }
         else
         {
             prefix = Locales[locale];
-            _stprintf(buff, _T("/Data/wow-update-%u.MPQ"), input_path, Builds[i]);
+            _stprintf(buff, _T("%s/Data/wow-update-%u.MPQ"), input_path, Builds[i]);
         }
 
         if (!SFileOpenPatchArchive(LocaleMpq, buff, prefix, 0))
@@ -1145,7 +1145,7 @@ bool LoadLocaleMPQFile(int locale)
 void LoadCommonMPQFiles(uint32 build)
 {
     TCHAR filename[512];
-    _stprintf(filename, _T("/Data/world.MPQ"), input_path);
+    _stprintf(filename, _T("%s/Data/world.MPQ"), input_path);
     if (!SFileOpenArchive(filename, 0, MPQ_OPEN_READ_ONLY, &WorldMpq))
     {
         if (GetLastError() != ERROR_PATH_NOT_FOUND)
@@ -1156,7 +1156,7 @@ void LoadCommonMPQFiles(uint32 build)
     int count = sizeof(CONF_mpq_list) / sizeof(char*);
     for (int i = 1; i < count; ++i)
     {
-        _stprintf(filename, _T("/Data/%s"), input_path, CONF_mpq_list[i]);
+        _stprintf(filename, _T("%s/Data/%s"), input_path, CONF_mpq_list[i]);
         if (!SFileOpenPatchArchive(WorldMpq, filename, "", 0))
         {
             if (GetLastError() != ERROR_PATH_NOT_FOUND)
@@ -1181,12 +1181,12 @@ void LoadCommonMPQFiles(uint32 build)
         if (Builds[i] > LAST_DBC_IN_DATA_BUILD)
         {
             prefix = "";
-            _stprintf(filename, _T("/Data/wow-update-base-%u.MPQ"), input_path, Builds[i]);
+            _stprintf(filename, _T("%s/Data/wow-update-base-%u.MPQ"), input_path, Builds[i]);
         }
         else
         {
             prefix = "base";
-            _stprintf(filename, _T("/Data/wow-update-%u.MPQ"), input_path, Builds[i]);
+            _stprintf(filename, _T("%s/Data/wow-update-%u.MPQ"), input_path, Builds[i]);
         }
 
         if (!SFileOpenPatchArchive(WorldMpq, filename, prefix, 0))
@@ -1227,7 +1227,7 @@ int main(int argc, char * arg[])
             if (GetLastError() != ERROR_PATH_NOT_FOUND)
                 printf("Unable to load %s locale archives!\n", Locales[i]);
             continue;
-    	}
+		}
 
         if ((CONF_extract & EXTRACT_DBC) == 0)
         {
