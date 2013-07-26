@@ -949,7 +949,7 @@ void ExtractMapsFromMpq(uint32 build)
     uint32 map_count = ReadMapDBC();
 
     ReadAreaTableDBC();
-    ReadLiquidTypeTableDBC();
+    //ReadLiquidTypeTableDBC();
 
     std::string path = output_path;
     path += "/maps/";
