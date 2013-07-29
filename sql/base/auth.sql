@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `last_login` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `online` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `active_realm_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `expansion` tinyint(3) unsigned NOT NULL DEFAULT '2',
+  `expansion` tinyint(3) unsigned NOT NULL DEFAULT '4',
   `mutetime` bigint(40) NOT NULL DEFAULT '0',
   `locale` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `os` varchar(4) NOT NULL DEFAULT '',
@@ -290,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `realmlist` (
   `allowedSecurityLevel` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `population` float unsigned NOT NULL DEFAULT '0',
   `realmbuilds` int(10) unsigned NOT NULL DEFAULT '12340',
-  `gamebuild` int(10) unsigned NOT NULL DEFAULT '12340',
+  `gamebuild` int(10) unsigned NOT NULL DEFAULT '17128',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Realm System';
@@ -298,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `realmlist` (
 -- Dumping data for table auth.realmlist: ~1 rows (approximately)
 /*!40000 ALTER TABLE `realmlist` DISABLE KEYS */;
 INSERT INTO `realmlist` (`id`, `name`, `address`, `port`, `icon`, `color`, `flag`, `realmflags`, `timezone`, `allowedSecurityLevel`, `population`, `realmbuilds`, `gamebuild`) VALUES
-	(1, 'test depths', '127.0.0.1', 8085, 0, 2, 32, 32, 1, 0, 0, 12340, 16769);
+	(1, 'test trinity', '127.0.0.1', 8085, 0, 2, 32, 32, 1, 0, 0, 12340, 17128);
 /*!40000 ALTER TABLE `realmlist` ENABLE KEYS */;
 
 
