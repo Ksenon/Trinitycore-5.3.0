@@ -271,7 +271,7 @@ uint32 ReadMapDBC()
     printf("Done! (%u maps loaded)\n", map_count);
     return map_count;
 }
-
+/*
 void ReadAreaTableDBC()
 {
     printf("Read AreaTable.dbc file...");
@@ -299,7 +299,7 @@ void ReadAreaTableDBC()
     SFileCloseFile(dbcFile);
     printf("Done! (%u areas loaded)\n", area_count);
 }
-/*
+
 void ReadLiquidTypeTableDBC()
 {
     printf("Read LiquidType.dbc file...");
@@ -985,7 +985,7 @@ void ExtractMapsFromMpq(uint32 build)
 
     uint32 map_count = ReadMapDBC();
 
-    ReadAreaTableDBC();
+    //ReadAreaTableDBC();
     //ReadLiquidTypeTableDBC();
 
     std::string path = output_path;
